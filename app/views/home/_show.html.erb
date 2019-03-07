@@ -58,17 +58,14 @@ p[role="presentation"] i.glyphicon {
 </style>
 <script type="text/javascript">
 var script = document.createElement('script');
-    script.type = "text/javascript";
     script.src="https://framasoft.org/nav/nav.js";
     document.getElementsByTagName('head')[0].appendChild(script);
 
     jQuery(document).ready(function() {
-        jQuery('link[href*=bootstrap-complete]').remove();
-        jQuery.getJSON( "https://framasphere.org/statistics.json" ).done( function( data ) {
-            jQuery('#userFramasphere').text(data.total_users);
+        jQuery.getJSON('https://framasphere.org/nodeinfo/2.0').done( function( data ) {
+            jQuery('#userFramasphere').text(data.usage.users.total);
         });
     });
-
 </script>
 <div class="row" id="internav">
     <div class="container">
@@ -98,7 +95,7 @@ var script = document.createElement('script');
         <div class="col-md-4">
             <h2 class="h3">Qu'est-ce que c’est&nbsp;?</h2>
             <p><b class="violet">Frama</b><b class="vert">sphère</b> est un nœud (appelé pod) du réseau social libre Diaspora*.</p>
-            <p>Ses <a href="https://framasphere.org/statistics" id="userFramasphere">20 000</a> utilisateurs peuvent communiquer avec les ~<a href="http://the-federation.info/">600 000</a> que compte l’ensemble du réseau.</p>
+            <p>Ses <a href="https://framasphere.org/statistics" id="userFramasphere">50 000</a> utilisateurs peuvent communiquer avec les ~<a href="http://the-federation.info/">600 000</a> que compte l’ensemble du réseau.</p>
 
             <h2 class="h3">Pourquoi utiliser Framasphère ?</h2>
             <p>Depuis <b class="violet">Frama</b><b class="vert">sphère</b>, vous pouvez&nbsp;:</p>
